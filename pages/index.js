@@ -7,7 +7,8 @@ import Footer from '../components/Footer'
 
 const Title = styled.h1`
   color: #339900;
-`;
+  text-align: center;
+`
 
 const Home = () => (
   <div className="container">
@@ -19,38 +20,23 @@ const Home = () => (
     <Header />
     <main>
       <Title>
-        Welcome to SafeQueue! 
+        SafeQueue
       </Title>
 
-      <div className="grid">
+      <div>
         <Link href="/admin">
-          <a className="card">
+          <a>
             <h3>Admin Page &rarr;</h3>
           </a>
         </Link>
         <Link href="/user">
-          <a className="card">
+          <a>
             <h3>User Page &rarr;</h3>
           </a>
         </Link>
       </div>
     </main>
     <Footer />
-
-    {/* <style jsx global>{`
-      html,
-      body {
-        padding: 0;
-        margin: 0;
-        margin-top: 3em;
-        font-family: Helvetica Neue, Roboto, Oxygen, -apple-system, BlinkMacSystemFont, Segoe UI,
-          Ubuntu, Cantarell, Fira Sans, Droid Sans, sans-serif;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-    `}</style> */}
   </div>
 )
 

@@ -3,14 +3,31 @@ import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
+	html {
+		font-family: Helvetica Neue, Roboto, sans-serif;
+		font-size: 16px;
+	}
+
   body {
 		padding: 0;
 		margin: 0;
 		overflow: hidden;
 		background: #FFFFFF;
-		font-family: Helvetica Neue, Robot, sans-serif;
+	}
+
+	main {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: center;
+		padding: 0.5em 2em;
+	}
+	
+	a {
 		font-size: 16px;
-  }
+		font-family: Helvetica Neue, Roboto, sans-serif;
+		cursor: pointer;
+	}
 `
 
 export default class MyApp extends App {
@@ -27,8 +44,9 @@ export default class MyApp extends App {
 		return (
 			<React.Fragment>
 				<Container>
-						<GlobalStyle />
-						<Component {...pageProps} />
+					<GlobalStyle />
+					<link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+					<Component {...pageProps} />
 				</Container>
 			</React.Fragment>
 		);

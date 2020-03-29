@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import Button from '../components/Button'
 
 const Nav = styled.nav`
 	display: flex;
@@ -9,23 +8,26 @@ const Nav = styled.nav`
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 3em;
 	padding: 0.5em 1em;
 	background-color: #FFFFFF;
 	border-top: 2px solid #339900;
+`
+
+const FooterLink = styled.a`
+	padding: 0.25em 1em;
 `
 
 const Footer = () => (
 	<footer>
   	<Nav>
       <Link href="/">
-        <Button><a>About</a></Button>
+        <FooterLink>About</FooterLink>
 			</Link>
 			<Link href="/">
-				<Button><a>Social</a></Button>
+				<FooterLink>Social</FooterLink>
 			</Link>
 			<Link href="/">
-        <Button><a>&copy;</a></Button>
+        <FooterLink>&copy;</FooterLink>
 			</Link>
     </Nav>
   </footer>

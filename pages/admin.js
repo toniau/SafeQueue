@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styled from 'styled-components'
 
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 const Admin = () => (
 	<div className="admin-container">
@@ -9,9 +10,8 @@ const Admin = () => (
 			<title>SafeQueue</title>
 		</Head>
 
+		<Header />
 		<main>
-			<Header />
-
 			<div className="admin-profile">
 				<h1>Admin Page</h1>
 				<div className="admin-profile__store">
@@ -22,6 +22,7 @@ const Admin = () => (
 				</div>
 			</div>
 		</main>
+		<Footer />
 	</div>
 )
 

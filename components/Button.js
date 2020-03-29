@@ -6,7 +6,10 @@ const Button = styled.button`
 	border: 2px solid #339900;
 	color: #339900;
 	margin: 0 1em;
-	padding: 0.25em 1em;
+
+	a {
+		padding: 0.25em 1em;
+	}
 `
 
 export default Button;

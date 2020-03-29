@@ -8,7 +8,6 @@ const Nav = styled.nav`
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 3em;
 	padding: 0.5em 1em;
 	background-color: #FFFFFF;
 	border-bottom: 2px solid #339900;
