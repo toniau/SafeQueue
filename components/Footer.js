@@ -5,29 +5,30 @@ import Button from '../components/Button'
 const Nav = styled.nav`
 	display: flex;
 	justify-content: flex-start;
-	top: 0;
+	position: fixed;
+	bottom: 0;
 	left: 0;
 	width: 100%;
 	height: 3em;
 	padding: 0.5em 1em;
 	background-color: #FFFFFF;
-	border-bottom: 2px solid #339900;
+	border-top: 2px solid #339900;
 `
 
-const Header = () => (
-	<header>
+const Footer = () => (
+	<footer>
   	<Nav>
       <Link href="/">
-        <Button><a>Home</a></Button>
+        <Button><a>About</a></Button>
 			</Link>
-			<Link href="/admin">
-				<Button><a>Admin</a></Button>
+			<Link href="/">
+				<Button><a>Social</a></Button>
 			</Link>
-			<Link href="/user">
-        <Button><a>User</a></Button>
+			<Link href="/">
+        <Button><a>&copy;</a></Button>
 			</Link>
     </Nav>
-  </header>
+  </footer>
 )
 
-export default Header
+export default Footer

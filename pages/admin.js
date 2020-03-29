@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import styled from 'styled-components'
 
+import Header from '../components/Header'
+
 const Admin = () => (
 	<div className="admin-container">
 		<Head>
@@ -8,9 +10,10 @@ const Admin = () => (
 		</Head>
 
 		<main>
-			<h1>Admin Page</h1>
+			<Header />
 
 			<div className="admin-profile">
+				<h1>Admin Page</h1>
 				<div className="admin-profile__store">
 					Your Store: Mitsuwa
 				</div>
