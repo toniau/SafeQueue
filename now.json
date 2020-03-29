@@ -1,0 +1,5 @@
+{
+    "env": {
+      "MAPBOX_KEY": "@mapbox-key"
+    }
+  }

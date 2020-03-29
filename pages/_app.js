@@ -1,4 +1,4 @@
-import App, { Container } from 'next/app'
+import App from 'next/app'
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 
@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
 		background: #FFFFFF;
 	}
 
-	main {
+	main {    
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;
@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
 		padding: 0.5em 2em;
 	}
 	
+
 	a {
 		font-size: 16px;
 		font-family: Helvetica Neue, Roboto, sans-serif;
@@ -43,11 +44,9 @@ export default class MyApp extends App {
 		const { Component, pageProps } = this.props;
 		return (
 			<React.Fragment>
-				<Container>
-					<GlobalStyle />
-					<link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
-					<Component {...pageProps} />
-				</Container>
+				<GlobalStyle />
+				<link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+				<Component {...pageProps} />
 			</React.Fragment>
 		);
 	}

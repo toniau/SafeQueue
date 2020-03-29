@@ -4,8 +4,8 @@ import ReactMapGL from 'react-map-gl';
 class Map extends Component {
   state = {
     viewport: {
-      width: '100vw',
-      height: '100vh',
+      width: '90vw',
+      height: '400px',
       latitude: 41.5868,
       longitude: -93.625,
       zoom: 13

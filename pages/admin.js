@@ -1,15 +1,8 @@
-import Head from 'next/head'
-import styled from 'styled-components'
-
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 const Admin = () => (
 	<div className="admin-container">
-		<Head>
-			<title>SafeQueue</title>
-		</Head>
-
 		<Header />
 		<main>
 			<div className="admin-profile">
