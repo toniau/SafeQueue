@@ -1,5 +1,6 @@
 import { Component } from 'react';
-import ReactMapGL from 'react-map-gl';
+import MapGL from 'react-map-gl';
+import Geocoder from 'react-map-gl-geocoder'
 
 class Map extends Component {
   state = {
@@ -10,18 +11,27 @@ class Map extends Component {
       longitude: -93.625,
       zoom: 13
     }
-  };
+	}
+	
+	mapRef = React.createRef()
 
   render() {
     return (
-      <ReactMapGL
+      <MapGL
+				ref={this.mapRef}
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxApiAccessToken={process.env.MAPBOX_KEY}
         onViewportChange={(viewport) => this.setState({ viewport })}
         {...this.state.viewport}
-      />
+      >
+				<Geocoder
+					mapRef={this.mapRef}
+					onViewportChange={this.handleViewportChange}
+					mapboxApiAccessToken={process.env.MAPBOX_KEY}
+				/>
+			</MapGL>
     );
   }
 }
 
-export default Map;
+export default Map

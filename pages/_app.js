@@ -46,6 +46,7 @@ export default class MyApp extends App {
 			<React.Fragment>
 				<GlobalStyle />
 				<link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+				<link href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.css' rel='stylesheet' />	
 				<Component {...pageProps} />
 			</React.Fragment>
 		);
