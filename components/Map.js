@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import MapGL from 'react-map-gl';
+import ReactMapGL, { GeolocateControl } from 'react-map-gl';
 import Geocoder from 'react-map-gl-geocoder'
 
 class Map extends Component {
@@ -17,19 +17,23 @@ class Map extends Component {
 
   render() {
     return (
-      <MapGL
+      <ReactMapGL
 				ref={this.mapRef}
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxApiAccessToken={process.env.MAPBOX_KEY}
         onViewportChange={(viewport) => this.setState({ viewport })}
         {...this.state.viewport}
       >
+				<GeolocateControl
+					positionOptions={{enableHighAccuracy: true}}
+					showUserLocation="false"
+				/>
 				<Geocoder
 					mapRef={this.mapRef}
 					onViewportChange={this.handleViewportChange}
 					mapboxApiAccessToken={process.env.MAPBOX_KEY}
 				/>
-			</MapGL>
+			</ReactMapGL>
     );
   }
 }
