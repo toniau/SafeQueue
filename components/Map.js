@@ -7,11 +7,31 @@ class Map extends Component {
     viewport: {
       width: '90vw',
       height: '400px',
-      latitude: 41.5868,
-      longitude: -93.625,
+      latitude: 0,
+      longitude: 0,
       zoom: 13
     }
-	}
+  }
+
+  componentDidMount = () =>{
+    navigator.geolocation.getCurrentPosition(position => {
+      const newViewport = {
+        width: '90vw',
+        height: '400px',
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+        zoom: 13
+      }
+      this.setState({
+        viewport: newViewport
+      })
+    })
+  }
+
+  // Handle response from geocoder
+  handleOnResults = (event) => {
+    
+  }
 	
 	mapRef = React.createRef()
 
@@ -25,12 +45,15 @@ class Map extends Component {
         {...this.state.viewport}
       >
 				<GeolocateControl
+          mapRef={this.mapRef}
 					positionOptions={{enableHighAccuracy: true}}
-					showUserLocation="false"
+					showUserLocation={false}
 				/>
 				<Geocoder
-					mapRef={this.mapRef}
-					onViewportChange={this.handleViewportChange}
+          mapRef={this.mapRef}
+          onViewportChange={this.handleViewportChange}
+          onResults={this.handleOnResults}
+          position='top-left'
 					mapboxApiAccessToken={process.env.MAPBOX_KEY}
 				/>
 			</ReactMapGL>
